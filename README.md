@@ -1,8 +1,14 @@
-# BEA 2026 Shared Task: Vocabulary Difficulty Prediction
+# Data Asgardians at BEA 2026 Shared Task 1
 
-## Team Data Asgardians. Reproducibility Repository
+## A Hybrid Transformer–Feature Ensemble for L1-Aware English Vocabulary Difficulty Prediction
 
-This repository contains the complete research pipeline developed by team Data Asgardians for the BEA 2026 Shared Task on predicting the Knowledge of Vocabulary Level (KVL) of English words for learners from three first-language (L1) backgrounds: Spanish, German, and Mandarin Chinese. The repository documents every stage of the work, from exploratory data analysis and linguistic feature engineering to transformer fine-tuning and the final submitted systems. All notebooks are provided with their stored outputs so that the full experimental record can be inspected without access to a GPU.
+**Authors:** Adrian Pineda, Sabur Butt, and Héctor Ceballos Cancino
+
+**Published in:** Proceedings of the 21st Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2026), Association for Computational Linguistics, pages 1137–1145. San Diego, California, USA.
+
+**Paper:** https://aclanthology.org/2026.bea-1.82/
+
+This repository is the reproducibility record for team Data Asgardians' submission to Shared Task 1 of BEA 2026, on predicting the Knowledge of Vocabulary Level (KVL) of English words for learners from three first-language (L1) backgrounds: Spanish, German, and Mandarin Chinese. It contains the complete research pipeline behind the paper cited above, from exploratory data analysis and linguistic feature engineering to transformer fine-tuning and the final submitted systems. All notebooks are provided with their stored outputs so that the full experimental record can be inspected without access to a GPU.
 
 Our approach combines multilingual transformer models (XLM-RoBERTa-Large and mDeBERTa-v3-base) with a set of theoretically motivated linguistic features covering phonology, morphology, orthography, and lexical semantics. The best submitted system, an ensemble built on mDeBERTa-v3-base, reached a test RMSE of 1.037 (Spanish), 0.997 (German), and 0.913 (Mandarin), improving on the official xlm-roberta-base baseline for every L1.
 
@@ -139,13 +145,31 @@ The `figures/eda/` directory holds the ten figures produced by the exploratory a
 
 The `figures/paper/` directory holds the publication versions: the recolored target distribution and feature correlation figures, SHAP summary plots for the per-L1 XGBoost models (individually and combined), and the final test RMSE comparison across all eight systems (Figure 12), in both PNG and PDF form.
 
-## 8. References
+## 8. Citation
+
+If you use this work, please cite the paper:
+
+```bibtex
+@inproceedings{pineda-etal-2026-data,
+    title = "Data Asgardians at {BEA} 2026 Shared Task 1: A Hybrid Transformer{--}Feature Ensemble for {L}1-Aware {E}nglish Vocabulary Difficulty Prediction",
+    author = "Pineda, Adrian and Butt, Sabur and Ceballos Cancino, H{\'e}ctor",
+    booktitle = "Proceedings of the 21st Workshop on Innovative Use of {NLP} for Building Educational Applications ({BEA} 2026)",
+    month = jul,
+    year = "2026",
+    address = "San Diego, California, USA",
+    publisher = "Association for Computational Linguistics",
+    pages = "1137--1145",
+    doi = "10.18653/v1/2026.bea-1.82"
+}
+```
+
+## 9. References
 
 - Skidmore et al. (2025). Dataset description underlying the BEA 2026 KVL shared task.
 - Schmitt, N., et al. (2024). Knowledge of Vocabulary Level framework.
 - Conneau, A., et al. (2020). Unsupervised Cross-lingual Representation Learning at Scale. XLM-RoBERTa.
 - He, P., et al. (2021). DeBERTaV3: Improving DeBERTa using ELECTRA-Style Pre-Training. mDeBERTa-v3.
 
-## 9. License and Acknowledgements
+## 10. License and Acknowledgements
 
 The code in this repository is released under the terms of the LICENSE file. The shared task data remain the property of the British Council and are subject to the terms stated in the official task repository. We thank the shared task organizers for providing the data, the baseline systems, and the evaluation infrastructure.
